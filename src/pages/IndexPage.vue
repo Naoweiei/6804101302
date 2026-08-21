@@ -1,12 +1,18 @@
 <template>
   <q-page class="q-pa-md">
     <q-form class="q-gutter-md" style="max-width: 600px">
-      <q-input filled label="Your name *" hint="Name and surname" />
-      <q-input filled type="number" label="Your age *" />
+      <q-input filled label="Your name (ชื่อ-สกุล) *" />
+      <q-input filled type="number" label="Your age (อายุ) *" />
       <q-toggle label="I accept the license and terms" />
       <div>
         <q-btn label="SUBMIT" type="submit" color="primary" />
-        <q-btn label="RESET" type="reset" color="primary" flat class="q-ml-sm" />
+        <q-btn
+          label="RESET"
+          type="reset"
+          color="primary"
+          flat
+          class="q-ml-sm"
+        />
       </div>
     </q-form>
   </q-page>
@@ -21,7 +27,7 @@ const name = ref('')
 const age = ref(null)
 const accept = ref(false)
 
-function onSubmit () {
+function onSubmit() {
   if (accept.value !== true) {
     $q.notify({
       type: 'negative',
@@ -35,7 +41,7 @@ function onSubmit () {
   }
 }
 
-function onReset () {
+function onReset() {
   name.value = ''
   age.value = null
   accept.value = false
